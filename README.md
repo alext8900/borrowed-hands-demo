@@ -11,7 +11,7 @@ This repository is the demo fixture for [Borrowed Hands](https://github.com/alex
 
 That shape is deliberate. The Borrowed Hands runner builds with no network, signing turned off and remote Swift packages refused, so this project needs nothing beyond the files in the commit.
 
-The code also avoids Swift macros. In the Xcode 27 SDK, `@State`, `#Preview`, `@Observable` and friends are macros, and the compiler runs macro plugins inside a sandbox of their own, which the runner's build sandbox does not allow. So the app keeps its state in `@AppStorage` and uses `PreviewProvider` for previews. If you change the code, keep it macro-free or the build fails with "external macro implementation type ... could not be found".
+SwiftUI macros such as `@State`, `#Preview` and `@Observable` build fine through Borrowed Hands: the runner's build sandbox confines the compiler's macro plugins. (Very early helper versions could not build them, which is why this app keeps its state in `@AppStorage` and uses `PreviewProvider`; either style works.)
 
 ## Grant it on your Mac
 
