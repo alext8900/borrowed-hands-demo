@@ -18,6 +18,9 @@ struct ContentView: View {
                 Text("Compiled on your Mac by Borrowed Hands")
                     .font(.headline)
                     .foregroundStyle(.secondary)
+                Text("Fresh agent test")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
             }
             .multilineTextAlignment(.center)
 
