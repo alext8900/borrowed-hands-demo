@@ -15,6 +15,9 @@ struct ContentView: View {
             VStack(spacing: 8) {
                 Text("Built by Hermes")
                     .font(.largeTitle.weight(.bold))
+                Text("Built on a borrowed Mac")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
                 Text("Compiled on your Mac by Borrowed Hands")
                     .font(.headline)
                     .foregroundStyle(.secondary)
