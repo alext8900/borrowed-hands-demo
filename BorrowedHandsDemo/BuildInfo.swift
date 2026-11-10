@@ -20,6 +20,16 @@ enum BuildInfo {
         #endif
     }
 
+    /// Marketing version from the bundle (CFBundleShortVersionString), or "dev" when absent.
+    static var version: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "dev"
+    }
+
+    /// Build number from the bundle (CFBundleVersion), or "0" when absent.
+    static var buildNumber: String {
+        Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "0"
+    }
+
     static var summary: String {
         "\(platform) build, \(configuration)"
     }
